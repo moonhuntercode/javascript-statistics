@@ -2,162 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller práctico de Javascript: Matemáticas y Estadística</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>statistics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="./main.js"></script>
 </head>
-<body class="body">
-    <header class="header">
-        <h1 class="header__title">Proyecto:<br>Estadística</h1>
-        <nav class="menu">
-            <h2 class="menu__item menu__item--mates menu__item--inactive">Matemáticas</h2>
-            <h2 class="menu__item menu__item--porcentajes menu__item--inactive">Porcentajes</h2>
-            <h2 class="menu__item menu__item--estadistica menu__item--inactive">Estadística</h2>
-            <h2 class="menu__item menu__item--salarios menu__item--inactive">Análisis salarial</h2>
-        </nav>
-    </header>
-    <main class="main">
-        <section class="section section--mates section--inactive">
-            <h2 class="section__title">Formulas matemáticas</h2>
-            <div class="card card--formulas">
-                <h3 class="card__title">Calcular Perímetro y área de un rectangulo</h3>
-                <div class="card__content card__content--rectangulo">
-                    <div class="card__form">
-                            <input class="input" type="number" placeholder="Base" id="input_base_rectangulo">
-                            <input class="input" type="number" placeholder="Altura" id="input_altura_rectangulo">
-                        <button class="button button--rectangulo">Calcular</button>
-                    </div>
-                    <div class="card__resultados card__resultados--rectangulo"></div>
-                </div>
-            </div>
-            <div class="card card--formulas">
-                <h3 class="card__title">Calcular Perímetro y área de un triangulo</h3>
-                <div class="card__content card__content--triangulo">
-                    <div class="card__form">
-                            <input class="input" type="number" placeholder="Base" id="input_base_triangulo">
-                            <input class="input" type="number" placeholder="Lado 1" id="input_lado1_triangulo">
-                            <input class="input" type="number" placeholder="Lado 2" id="input_lado2_triangulo">
-                        <button class="button button--triangulo">Calcular</button>
-                    </div>
-                    <div class="card__resultados card__resultados--triangulo"></div>
-                </div>
-            </div>
-            <div class="card card--formulas">
-                <h3 class="card__title">Calcular Perímetro y área de un circulo</h3>
-                <div class="card__content card__content--circulo">
-                    <div class="card__form">
-                            <input class="input" type="number" name="input_radio_circulo" id="input_radio_circulo" placeholder="Radio">
-                        <button class="button button--circulo">Calcular</button>
-                    </div>
-                    <div class="card__resultados card__resultados--circulo"></div>
-                </div>
-            </div>
-        </section>
-        <section class="section section--porcentajes section--inactive">
-            <h2 class="section__title">Porcentajes</h2>
-            <div class="card card--porcentajes">
-                <h3 class="card__title">Aplicar descuento a un precio</h3>
-                <div class="card__content card__content--descuento">
-                    <div class="card__form">
-                        <input class="input" type="number" id="precio" placeholder="Precio">
-                        <input class="input" type="number" id="descuento" max="100" maxlength="100" placeholder="Descuento">
-                        <button class="button" id="btn-calcular-descuento">Calcular Descuento</button>
-                        <button class="button button--secondary" id="limpiar-calculo-descuento">Limpiar</button>
-                    </div>
-                    <div class="card__resultados card__resultados--descuento">
-                        <p id="precio_con_descuento"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="card card--cupones">
-                <h3 class="card__title">Aplicar descuento a un precio con cupón</h3>
-                <div class="card__content card__content--cupones">
-                    <div class="card__form">
-                        <input class="input" type="number" id="precio2" placeholder="precio">                  
-                        <input class="input" id="cupon_descuento" type="text" placeholder="Código del cupon">
-                        <button class="button" id="btn-calcular-descuento-cupon">Aplicar descuento</button>
-                        <button class="button button--secondary" id="limpiar-calculo-descuento-cupon">Limpiar</button>
-                    </div>
-                    <div class="card__resultados card__resultados--cupones">
-                        <p id="precio_con_descuento_cupon"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section section--estadistica section--inactive">
-            <h2 class="section__title">Estádistica Básica</h2>
-            <div class="card card--promedios">
-                <h3 class="card__title">Seleccione la opción</h3>
-                <div class="card__content card__content--promedios">
-                    <div class="card__form">
-                        <div class="buttons-container">
-                            <button class="button button--promedios" id="btn-mediana">Mediana</button>
-                            <button class="button button--promedios" id="btn-promedio">Promedio Aritmetico</button>
-                            <button class="button button--promedios" id="btn-moda">Moda</button>
-                            <button class="button button--promedios" id="btn-promedio-armonico">Promedio armonico</button>
-                        </div>
-                        <div class="buttons-container buttons-container--controls">
-                            <button class="button button--promedios" id="mdn-add-input">+</button>
-                            <button class="button button--promedios" id="mdn-del-input">-</button>
-                            <button class="button bu" id="btn-calcular">Calcular</button>
-                        </div>
-                        <div class="inputs-container" id="inputs-container">
-                            <input class="input" type="number" id="mdn-nm1" placeholder="Valor 1">
-                            <input class="input" type="number" id="mdn-nm2" placeholder="Valor 2">
-                        </div>
-                    </div>
-                </div> 
-                <div class="card__resultados card__resultados--promedios">
-                    <p id="total_valores_mdn"></p>
-                    <p id="cantidad_valores_mdn"></p>
-                    <p id="valor_mediana"></p>
-                </div>
-            </div>
-        </section>
-        <section class="section section--salarios section--inactive">
-            <h2 class="section__title">Análisis salarial</h2>
-            <div class="card card--salarios">
-                <h3 class="card__title">Salario por persona</h3>
-                <div class="card__content card__content--salarios">
-                    <div class="card__form">
-                        <input class="input" list="select-persona" id="input-persona" placeholder="Nombre"/>
-                        <datalist id="select-persona">
-                        </datalist>
-                        <button class="button button--salario-persona">Analisis de salario</button>
-                    </div>
-                    <div class="card__resultados card__resultados--persona"></div>
-                </div>
-            </div>
-            <div class="card card--salarios">
-                <h3 class="card__title">Salario por Empresa</h3>
-                <div class="card__content card__content--salarios">
-                    <div class="card__form">
-                        <input class="input" list="select-empresa" id="input-empresa" placeholder="Nombre"/>
-                        <datalist id="select-empresa">
-                        </datalist>
-                        <button class="button button--salario-empresa">Analisis de salario</button>
-                    </div>
-                    <div class="card__resultados card__resultados--empresa"></div>
-                </div>
-            </div>
-        </section>
+<body id="body">
+    <main id="container_of_problem">
+        <table>
+            <tr>
+                <th>
+                    Evaluación final de Estatística 1
+                </th>
+                <th>
+                    Frecuencia absoluta f(i)
+                    
+                </th>
+                <th>
+                    Frecuencia relativa h(i) 
+                </th>
+                <th>
+                    Frecuencia relativa h(i) %
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+                <td>
+                    <input type="number" class="variable">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="resultado" class="resultado_variable">
+                </td>
+                <td>
+                    <input type="number" placeholder="resultado" class="resultado_variable">
+                </td>
+                <td>
+                    
+                    <input type="number" 
+                    
+                    placeholder="resultado" class="resultado_variable">
+                </td>
+                <td>
+                    <input type="number" placeholder="resultado" class="resultado_variable">
+                </td>
+            </tr>
+        </table>
+        <form action="#" id="form">
+            <input type="button" value="+" id="increase_variables">
+            <input type="button" value="-" id="btn">
+            <input type="submit" id="decrease_variables" value="calcular">
+            <br>
+            <input type="number" class="variable" placeholder="valor">
+        </form>
     </main>
-    <script type="module" src="./cambio_vista.js"></script>
-    <script type="module" src="./platzimath.js"></script>
-    <script type="module" src="./formulas.js"></script>
-    <script type="module" src="./porcentajes.js"></script>
-    <script type="module" src="./estadistica.js"></script>
-    <script type="module" src="./salarios.js"></script>
-    <script type="module" src="./analisis_salarios.js"></script>
-    <footer class="footer">
-        <p class="footer__text">
-            Made by 
-            <a target="_blank" class="footer__link" href="https://github.com/moonhuntercode">victor code</a>
-        </p>
-    </footer>
 </body>
 </html>

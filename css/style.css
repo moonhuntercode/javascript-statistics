@@ -1,0 +1,79 @@
+:root{
+    --primary-color: #3406ff;
+    --secondary-color: #f5f5f5;
+    --third-color: #f5f5f5;
+    --one-hundred-percent:100%;
+    --width-form:var(--one-hundred-percent);
+    --height-form:50vh;
+    --border-of-form: solid .5rem black;
+    --min-width-of-input: 20px;
+
+}
+*,
+*::before,
+*::after{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: var(--one-hundred-percent);
+    height: var(--one-hundred-percent);
+}
+body{
+    /* font-size: xx-large; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center;
+
+}
+#container_of_problem{
+    width: 80vw;
+    height: 80%;
+    background: red;
+    
+    font-size: 1rem;
+    resize: vertical;
+    border: var(--border-of-form);
+    border-radius: 20px;
+    
+    overflow: hidden;
+    
+    /* overflow-y: hidden; */
+    overflow-x: scroll;
+    
+    & table{
+
+        & tr{
+            display: flex;
+            flex-flow: r wrap;
+            width: 100%;
+            /* place-content: center; */
+            /* height: 50px; */
+            background: rebeccapurple;
+            color: white;
+            & th{
+            width: 30%;
+            }
+            
+        }
+    }
+}
+form#form{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: var(--width-form);
+    height: var(--height-form);
+    & input[type="number"]{
+        min-width: var(--min-width-of-input);
+        max-width: 45%;
+        /* height: 10%; */
+        }
+    & input[type="submit"]{
+        background: blueviolet;
+        color: bisque;
+    }
+}
